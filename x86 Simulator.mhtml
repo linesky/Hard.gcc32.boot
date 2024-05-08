@@ -1,18 +1,3 @@
-From: <Saved by Blink>
-Snapshot-Content-Location: http://192.168.1.6:8080/simulator.html
-Subject: x86 Simulator
-Date: Wed, 8 May 2024 17:08:51 -0000
-MIME-Version: 1.0
-Content-Type: multipart/related;
-	type="text/html";
-	boundary="----MultipartBoundary--LTfULnw4ZdcFS5fXOBVzmIlekeQ81XSIi8p0qHebpA----"
-
-
-------MultipartBoundary--LTfULnw4ZdcFS5fXOBVzmIlekeQ81XSIi8p0qHebpA----
-Content-Type: text/html
-Content-ID: <frame-293D31C1F8E6B52568ECEC6937D738DC@mhtml.blink>
-Content-Transfer-Encoding: binary
-Content-Location: http://192.168.1.6:8080/simulator.html
 
 <!DOCTYPE html><html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
@@ -46,30 +31,3 @@ Content-Location: http://192.168.1.6:8080/simulator.html
 
 
 </body></html>
-------MultipartBoundary--LTfULnw4ZdcFS5fXOBVzmIlekeQ81XSIi8p0qHebpA----
-Content-Type: text/css
-Content-Transfer-Encoding: binary
-Content-Location: http://192.168.1.6:8080/styles.css
-
-@charset "utf-8";
-
-body { font-family: Arial, sans-serif; background-color: yellow; }
-
-.container { max-width: 800px; margin: 0px auto; padding: 20px; }
-
-textarea { width: 100%; height: 200px; margin-bottom: 10px; }
-
-.currentInstruction { margin-bottom: 10px; }
-
-.variables { margin-bottom: 20px; }
-
-.registerValues { margin-top: 10px; }
-
-button { margin-right: 10px; }
-
-.instructionList { margin-top: 20px; }
-
-.instructionList ul { list-style-type: none; padding: 0px; }
-
-.instructionList li { margin-bottom: 5px; }
-------MultipartBoundary--LTfULnw4ZdcFS5fXOBVzmIlekeQ81XSIi8p0qHebpA------
