@@ -1,0 +1,75 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: http://192.168.1.6:8080/simulator.html
+Subject: x86 Simulator
+Date: Wed, 8 May 2024 17:08:51 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--LTfULnw4ZdcFS5fXOBVzmIlekeQ81XSIi8p0qHebpA----"
+
+
+------MultipartBoundary--LTfULnw4ZdcFS5fXOBVzmIlekeQ81XSIi8p0qHebpA----
+Content-Type: text/html
+Content-ID: <frame-293D31C1F8E6B52568ECEC6937D738DC@mhtml.blink>
+Content-Transfer-Encoding: binary
+Content-Location: http://192.168.1.6:8080/simulator.html
+
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>x86 Simulator</title>
+    <link rel="stylesheet" href="http://192.168.1.6:8080/styles.css">
+</head>
+<body>
+    <div class="container">
+        <textarea id="codeInput" placeholder="Insira o código aqui..."></textarea>
+        <div id="current" class="currentInstruction"></div>
+        <div id="lists" class="variables">
+            <h2>Lista de Variáveis</h2>
+            <select id="variableList" multiple=""><option>RAX=0</option><option>RBX=0</option><option>RCX=0</option><option>RDX=0</option></select>
+            <div class="registerValues">
+                <h2>Valores dos Registos</h2>
+                <div>RAX: <span id="raxValue">0</span></div>
+                <div>RBX: <span id="rbxValue">0</span></div>
+                <div>RCX: <span id="rcxValue">0</span></div>
+                <div>RDX: <span id="rdxValue">0</span></div>
+            </div>
+        </div>
+        <button id="resetButton">Reset</button>
+        <button id="nextButton">Próximo Passo</button>
+        <div class="instructionList">
+            <h2>Lista de Instruções</h2>
+            <ul id="instructionList"></ul>
+        </div>
+    </div>
+    
+
+
+</body></html>
+------MultipartBoundary--LTfULnw4ZdcFS5fXOBVzmIlekeQ81XSIi8p0qHebpA----
+Content-Type: text/css
+Content-Transfer-Encoding: binary
+Content-Location: http://192.168.1.6:8080/styles.css
+
+@charset "utf-8";
+
+body { font-family: Arial, sans-serif; background-color: yellow; }
+
+.container { max-width: 800px; margin: 0px auto; padding: 20px; }
+
+textarea { width: 100%; height: 200px; margin-bottom: 10px; }
+
+.currentInstruction { margin-bottom: 10px; }
+
+.variables { margin-bottom: 20px; }
+
+.registerValues { margin-top: 10px; }
+
+button { margin-right: 10px; }
+
+.instructionList { margin-top: 20px; }
+
+.instructionList ul { list-style-type: none; padding: 0px; }
+
+.instructionList li { margin-bottom: 5px; }
+------MultipartBoundary--LTfULnw4ZdcFS5fXOBVzmIlekeQ81XSIi8p0qHebpA------

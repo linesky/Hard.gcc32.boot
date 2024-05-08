@@ -1,0 +1,46 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: yellow;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+.currentInstruction {
+    margin-bottom: 10px;
+}
+
+.variables {
+    margin-bottom: 20px;
+}
+
+.registerValues {
+    margin-top: 10px;
+}
+
+button {
+    margin-right: 10px;
+}
+
+.instructionList {
+    margin-top: 20px;
+}
+
+.instructionList ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.instructionList li {
+    margin-bottom: 5px;
+}
