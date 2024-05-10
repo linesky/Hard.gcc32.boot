@@ -213,6 +213,156 @@ document.getElementById('nextButton').addEventListener('click', function() {
                     }
 
             }   
+            if (args[0]=="SUB" && args.length>2){
+                
+                if (isNumericOrAlphanumeric(args[2])){
+                    
+                    vals=parseInt(args[2]);
+                    
+                }else{
+                    if(variableExists(args[2])){
+                        vals=getValueFromVariableList(args[2]);
+                    }else{
+                        debugs.textContent=programs[pc]+">> Error var not define";
+                    }
+                }
+                if(variableExists(args[1])){
+                        
+                        values[variableIndex(args[1])]= values[variableIndex(args[1])]-vals;
+                        iiii=0
+                    }else{
+                         if (isNumericOrAlphanumeric(args[1])){
+                              debugs.textContent=programs[pc]+">> Error address memory not suport";
+                              iiii=0;
+                        }else{
+                              addVariableToList(args[1]);
+                              values[variableIndex(args[1])]=values[variableIndex(args[1])]-vals;
+                              iiii=0;
+                        }
+                        
+                    }
+
+            }   
+            if (args[0]=="MUL" && args.length>2){
+                
+                if (isNumericOrAlphanumeric(args[2])){
+                    
+                    vals=parseInt(args[2]);
+                    
+                }else{
+                    if(variableExists(args[2])){
+                        vals=getValueFromVariableList(args[2]);
+                    }else{
+                        debugs.textContent=programs[pc]+">> Error var not define";
+                    }
+                }
+                if(variableExists(args[1])){
+                        
+                        values[variableIndex(args[1])]= values[variableIndex(args[1])]*vals;
+                        iiii=0
+                    }else{
+                         if (isNumericOrAlphanumeric(args[1])){
+                              debugs.textContent=programs[pc]+">> Error address memory not suport";
+                              iiii=0;
+                        }else{
+                              addVariableToList(args[1]);
+                              values[variableIndex(args[1])]=values[variableIndex(args[1])]*vals;
+                              iiii=0;
+                        }
+                        
+                    }
+
+            }
+            if (args[0]=="DIV" && args.length>2){
+                
+                if (isNumericOrAlphanumeric(args[2])){
+                    
+                    vals=parseInt(args[2]);
+                    
+                }else{
+                    if(variableExists(args[2])){
+                        vals=getValueFromVariableList(args[2]);
+                    }else{
+                        debugs.textContent=programs[pc]+">> Error var not define";
+                    }
+                }
+                if(variableExists(args[1])){
+                        
+                        values[variableIndex(args[1])]= values[variableIndex(args[1])]/vals;
+                        iiii=0
+                    }else{
+                         if (isNumericOrAlphanumeric(args[1])){
+                              debugs.textContent=programs[pc]+">> Error address memory not suport";
+                              iiii=0;
+                        }else{
+                              addVariableToList(args[1]);
+                              values[variableIndex(args[1])]=values[variableIndex(args[1])]/vals;
+                              iiii=0;
+                        }
+                        
+                    }
+
+            }
+            if (args[0]=="AND" && args.length>2){
+                
+                if (isNumericOrAlphanumeric(args[2])){
+                    
+                    vals=parseInt(args[2]);
+                    
+                }else{
+                    if(variableExists(args[2])){
+                        vals=getValueFromVariableList(args[2]);
+                    }else{
+                        debugs.textContent=programs[pc]+">> Error var not define";
+                    }
+                }
+                if(variableExists(args[1])){
+                        
+                        values[variableIndex(args[1])]= values[variableIndex(args[1])]&vals;
+                        iiii=0
+                    }else{
+                         if (isNumericOrAlphanumeric(args[1])){
+                              debugs.textContent=programs[pc]+">> Error address memory not suport";
+                              iiii=0;
+                        }else{
+                              addVariableToList(args[1]);
+                              values[variableIndex(args[1])]=values[variableIndex(args[1])]&vals;
+                              iiii=0;
+                        }
+                        
+                    }
+
+            } 
+            if (args[0]=="OR" && args.length>2){
+                
+                if (isNumericOrAlphanumeric(args[2])){
+                    
+                    vals=parseInt(args[2]);
+                    
+                }else{
+                    if(variableExists(args[2])){
+                        vals=getValueFromVariableList(args[2]);
+                    }else{
+                        debugs.textContent=programs[pc]+">> Error var not define";
+                    }
+                }
+                if(variableExists(args[1])){
+                        
+                        values[variableIndex(args[1])]= values[variableIndex(args[1])]|vals;
+                        iiii=0
+                    }else{
+                         if (isNumericOrAlphanumeric(args[1])){
+                              debugs.textContent=programs[pc]+">> Error address memory not suport";
+                              iiii=0;
+                        }else{
+                              addVariableToList(args[1]);
+                              values[variableIndex(args[1])]=values[variableIndex(args[1])]|vals;
+                              iiii=0;
+                        }
+                        
+                    }
+
+            }           
             if(iiii!=0)debugs.textContent=programs[pc]+">> instruction error";
         }
         
