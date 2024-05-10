@@ -1,7 +1,7 @@
 # x64.simulator
 
 this is a x64 simulator but only yet have nop and mov  add  sub  mul div or instrution yet
-
+reset to start after modify the code
 exemple:
 
 MOV,RAX,10
