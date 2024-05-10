@@ -4,8 +4,10 @@ this is a x64 simulator but only yet have nop and mov  add  sub  mul div or inst
 
 exemple:
 
-MOV,RAX,1
+MOV,RAX,10
 
+
+MOV,RBX,4
 
 MOV,VAR1,RAX
 
