@@ -1,6 +1,6 @@
 # x64.simulator
 
-this is a x64 simulator but only yet have nop and mov  add instrution yet
+this is a x64 simulator but only yet have nop and mov  add  sub  mul div or instrution yet
 
 exemple:
 
