@@ -418,7 +418,28 @@ document.getElementById('nextButton').addEventListener('click', function() {
                     }
 
             } 
-            
+            if (args[0]=="DEC" && args.length>1){
+                
+                var vals=1;
+                    
+                
+                if(variableExists(args[1])){
+                        
+                        values[variableIndex(args[1])]= values[variableIndex(args[1])]-vals;
+                        iiii=0
+                    }else{
+                         if (isNumericOrAlphanumeric(args[1])){
+                              debugs.textContent=programs[pc]+">> Error address memory not suport";
+                              iiii=0;
+                        }else{
+                              addVariableToList(args[1]);
+                              values[variableIndex(args[1])]=values[variableIndex(args[1])]-vals;
+                              iiii=0;
+                        }
+                        
+                    }
+
+            } 
             
 
 
@@ -519,6 +540,41 @@ document.getElementById('nextButton').addEventListener('click', function() {
             
                
             }   
+            if (args[0]=="JNZ" && args.length>1){
+                var nm=0;
+                var tt=-1;
+                var ttt=args[1];
+                
+                for(nm=0;nm<breakpointss.length;nm++){
+                    if(ttt+":"==breakpointss[nm]){
+                        
+                         if (values[6]==0) pc=jmps[nm];
+                         iiii=0;
+                    }
+                }
+            
+               
+            }   
+            if (args[0]=="JZ" && args.length>1){
+                var nm=0;
+                var tt=-1;
+                var ttt=args[1];
+                
+                for(nm=0;nm<breakpointss.length;nm++){
+                    if(ttt+":"==breakpointss[nm]){
+                        
+                         if (values[6]!=0) pc=jmps[nm];
+                         iiii=0;
+                    }
+                }
+            
+               
+            }   
+            try{
+                if (args[0].indexOf(':')>0)iiii=0;
+            }catch{
+                var t1=0;
+            }
             if(iiii!=0)debugs.textContent=programs[pc]+">> instruction error";
         }
         
