@@ -570,6 +570,131 @@ document.getElementById('nextButton').addEventListener('click', function() {
             
                
             }   
+            if (args[0]=="JNE" && args.length>1){
+                var nm=0;
+                var tt=-1;
+                var ttt=args[1];
+                
+                for(nm=0;nm<breakpointss.length;nm++){
+                    if(ttt+":"==breakpointss[nm]){
+                        
+                         if (values[6]==0) pc=jmps[nm];
+                         iiii=0;
+                    }
+                }
+            
+               
+            }   
+            if (args[0]=="JE" && args.length>1){
+                var nm=0;
+                var tt=-1;
+                var ttt=args[1];
+                
+                for(nm=0;nm<breakpointss.length;nm++){
+                    if(ttt+":"==breakpointss[nm]){
+                        
+                         if (values[6]!=0) pc=jmps[nm];
+                         iiii=0;
+                    }
+                }
+            
+               
+            }  
+
+
+
+
+
+
+
+
+            if (args[0]=="JNC" && args.length>1){
+                var nm=0;
+                var tt=-1;
+                var ttt=args[1];
+                
+                for(nm=0;nm<breakpointss.length;nm++){
+                    if(ttt+":"==breakpointss[nm]){
+                        
+                         if (values[7]==0) pc=jmps[nm];
+                         iiii=0;
+                    }
+                }
+            
+               
+            }   
+            if (args[0]=="JC" && args.length>1){
+                var nm=0;
+                var tt=-1;
+                var ttt=args[1];
+                
+                for(nm=0;nm<breakpointss.length;nm++){
+                    if(ttt+":"==breakpointss[nm]){
+                        
+                         if (values[7]!=0) pc=jmps[nm];
+                         iiii=0;
+                    }
+                }
+            
+               
+            } 
+            if (args[0]=="JNL" && args.length>1){
+                var nm=0;
+                var tt=-1;
+                var ttt=args[1];
+                
+                for(nm=0;nm<breakpointss.length;nm++){
+                    if(ttt+":"==breakpointss[nm]){
+                        
+                         if (values[5]==0) pc=jmps[nm];
+                         iiii=0;
+                    }
+                }
+            
+               
+            }   
+            if (args[0]=="JG" && args.length>1){
+                var nm=0;
+                var tt=-1;
+                var ttt=args[1];
+                
+                for(nm=0;nm<breakpointss.length;nm++){
+                    if(ttt+":"==breakpointss[nm]){
+                        
+                         if (values[5]==0) pc=jmps[nm];
+                         iiii=0;
+                    }
+                }
+            }      
+            if (args[0]=="JNG" && args.length>1){
+                var nm=0;
+                var tt=-1;
+                var ttt=args[1];
+                
+                for(nm=0;nm<breakpointss.length;nm++){
+                    if(ttt+":"==breakpointss[nm]){
+                        
+                         if (values[5]!=0) pc=jmps[nm];
+                         iiii=0;
+                    }
+                }
+            
+               
+            }   
+            if (args[0]=="JL" && args.length>1){
+                var nm=0;
+                var tt=-1;
+                var ttt=args[1];
+                
+                for(nm=0;nm<breakpointss.length;nm++){
+                    if(ttt+":"==breakpointss[nm]){
+                        
+                         if (values[5]!=0) pc=jmps[nm];
+                         iiii=0;
+                    }
+                }
+            }      
+
             try{
                 if (args[0].indexOf(':')>0)iiii=0;
             }catch{
