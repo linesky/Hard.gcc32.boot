@@ -36,5 +36,5 @@ OR RAX,RBX
 
 INC RAX
 
-
+CMP RAX,RBX
 
