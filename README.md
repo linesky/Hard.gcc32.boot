@@ -41,6 +41,6 @@ CMP RAX,RBX
 
 loop:
 
-
+inc rax
 
 jmp loop
