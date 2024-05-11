@@ -3,19 +3,40 @@ var args="";
 var pc=0;
 var variables=["RAX","RBX","RCX","RDX","PO","NE","ZERO","CARRY","OVERFLOW","DIRECTION"];
 var values=[0,0,0,0,0,0,0,0,0,0];
+var breakpointss=[];
+var jmps=[];
+var aa="";
 function starts(){
     var codeInput = document.getElementById('codeInput');
     var n=0;
+    var nn=0;
     pc=0;
     variables=["RAX","RBX","RCX","RDX","PO","NE","ZERO","CARRY","OVERFLOW","DIRECTION"];
     values=[0,0,0,0,0,0,0,0,0,0];
+    if(codeInput.value=="")return 0;
+    updateVariableInList();
     programs=splitCodeByLine(codeInput.value);
     // Create an Option object
     // Add the option to the listbox
+    
+    
+     
+    if (programs.length<1) return 0;
+    for(nn=0;nn<programs.length;nn++){
+        try{
+        args=splitCurrentLineByCommas(programs[nn]);
+           
+           if (args[0].indexOf(':')>0){
+            
+            breakpointss.push(args[0].toUpperCase());
+            jmps.push(nn);
+           
+           }
+        }catch{
+            var iiii=0;
+        }
+    }
    
-    updateVariableInList();
-
-
 }
 // Funcao para separar codigo por linha
 function splitCodeByLine(code) {
@@ -482,6 +503,21 @@ document.getElementById('nextButton').addEventListener('click', function() {
                         
                     }
 
+            }   
+            if (args[0]=="JMP" && args.length>1){
+                var nm=0;
+                var tt=-1;
+                var ttt=args[1];
+                
+                for(nm=0;nm<breakpointss.length;nm++){
+                    if(ttt+":"==breakpointss[nm]){
+                        
+                         pc=jmps[nm];
+                         iiii=0;
+                    }
+                }
+            
+               
             }   
             if(iiii!=0)debugs.textContent=programs[pc]+">> instruction error";
         }
