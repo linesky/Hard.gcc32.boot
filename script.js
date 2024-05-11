@@ -1,14 +1,14 @@
 var programs="";
 var args="";
 var pc=0;
-var variables=["RAX","RBX","RCX","RDX"];
-var values=[0,0,0,0];
+var variables=["RAX","RBX","RCX","RDX","PO","NE","ZERO","CARRY","OVERFLOW","DIRECTION"];
+var values=[0,0,0,0,0,0,0,0,0,0];
 function starts(){
     var codeInput = document.getElementById('codeInput');
     var n=0;
     pc=0;
-    variables=["RAX","RBX","RCX","RDX"];
-    values=[0,0,0,0];
+    variables=["RAX","RBX","RCX","RDX","PO","NE","ZERO","CARRY","OVERFLOW","DIRECTION"];
+    values=[0,0,0,0,0,0,0,0,0,0];
     programs=splitCodeByLine(codeInput.value);
     // Create an Option object
     // Add the option to the listbox
@@ -396,7 +396,93 @@ document.getElementById('nextButton').addEventListener('click', function() {
                         
                     }
 
-            }            
+            } 
+            
+            
+
+
+
+            if (args[0]=="CMP" && args.length>2){
+                
+                if (isNumericOrAlphanumeric(args[2])){
+                    
+                    vals=parseInt(args[2]);
+                    
+                }else{
+                    if(variableExists(args[2])){
+                        vals=getValueFromVariableList(args[2]);
+                    }else{
+                        debugs.textContent=programs[pc]+">> Error var not define";
+                    }
+                }
+                if(variableExists(args[1])){
+                    var vv1=values[variableIndex(args[1])];
+                    var poo=vv1<0
+                    var vvv=values[variableIndex(args[1])]-vals;
+                    if(vvv==0){
+                        values[6]=1;
+                    }else{
+                        values[6]=0;
+                    }
+                   if(vvv<0){
+                       values[4]=0;
+                       values[5]=1;
+                       if(!poo){
+                          values[7]=1;
+                       }else{
+                          values[7]=0;
+                       }
+                          
+
+                   }else{
+                      values[4]=1;
+                      values[5]=0;
+                      if(poo){
+                          values[7]=1;
+                      }else{
+                          values[7]=0;
+                       }
+                   }
+                        iiii=0
+                    }else{
+                         if (isNumericOrAlphanumeric(args[1])){
+                              debugs.textContent=programs[pc]+">> Error address memory not suport";
+                              iiii=0;
+                        }else{
+                              addVariableToList(args[1]);
+                              var vv1=values[variableIndex(args[1])];
+                              var poo=vv1<0
+                              var vvv=values[variableIndex(args[1])]-vals;
+                              if(vvv==0){
+                                  values[6]=1;
+                              }else{
+                                  values[6]=0;
+                              }
+                             if(vvv<0){
+                                 values[4]=0;
+                                 values[5]=1;
+                                 if(!poo){
+                                    values[7]=1;
+                                 }else{
+                                    values[7]=0;
+                                 }
+                                    
+
+                             }else{
+                                values[4]=1;
+                                values[5]=0;
+                                if(poo){
+                                    values[7]=1;
+                                }else{
+                                    values[7]=0;
+                                 }
+                             }
+                              iiii=0;
+                        }
+                        
+                    }
+
+            }   
             if(iiii!=0)debugs.textContent=programs[pc]+">> instruction error";
         }
         
