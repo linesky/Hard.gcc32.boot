@@ -38,3 +38,6 @@ INC RAX
 
 CMP RAX,RBX
 
+
+loop:
+jmp loop
