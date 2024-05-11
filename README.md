@@ -7,6 +7,12 @@ exemple:
 MOV,RAX,10
 
 
+MOV,CLEAR,0
+
+MOV,SET,1
+
+MOV,INC,1
+
 MOV,RBX,4
 
 MOV,VAR1,RAX
