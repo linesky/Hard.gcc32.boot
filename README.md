@@ -36,11 +36,15 @@ OR RAX,RBX
 
 INC RAX
 
-CMP RAX,RBX
+mov rcx,19
 
 
 loop:
 
-inc rax
+dec rcx
+
+cmp rcx,0
+
+jnz loop 
 
 jmp loop
