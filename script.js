@@ -17,27 +17,29 @@ function starts(){
 
 
 }
-// Função para separar código por linha
+// Funcao para separar codigo por linha
 function splitCodeByLine(code) {
     return code.split('\n');
 }
 
-// Função para separar linha atual por vírgulas
+// Funcao para separar linha atual por virgulas
 function splitCurrentLineByCommas(line) {
-    var spt=line.split(',');
+    var spt=line.split(/[ ,]+/);
     var sss=[];
     var n=0;
+    var nn=0;
     for(n=0;n<spt.length;n++){
+    
         var s=""+spt[n].toString();
         var ss=""+s.trim();
         ss=ss.toUpperCase();
-        sss.push(ss);
+        if(ss!="")sss.push(ss);
     }
     
     return sss;
 }
 
-// Verifica se um parâmetro é numérico ou alfanumérico
+// Verifica se um parametro e numerico ou alfanumerico
 function isNumericOrAlphanumeric(param) {
     if(param.length>0){
         if (param[0]>='0' && param[0]<='9') return true;
@@ -45,20 +47,20 @@ function isNumericOrAlphanumeric(param) {
     return false;
 }
 
-// Código para adicionar variáveis à lista de código
+// Codigo para adicionar variaveisa lista de codigo
 function addVariableToList(variable) {
     if (!variableExists(variable)) {
         variables.push(variable);
         values.push(0);
-        // Adicionar variável à lista
-        // Implemente esta função de acordo com a lógica de sua aplicação
+        // Adicionar variavel a lista
+        // Implemente esta funcao de acordo com a logica de sua aplicacao
        
     }
 }
 
-// Função para verificar se a variável já existe na lista
+// Funcao para verificar se a variavel ja existe na lista
 function variableExists(variable) {
-    // Implemente a lógica para verificar se a variável já existe na lista
+    // Implemente a logica para verificar se a variavel ja existe na lista
     var n=0;
     var nn=variables.length;
     for(n=0;n<nn;n++){
@@ -67,7 +69,7 @@ function variableExists(variable) {
     return false;
 }
 function variableIndex(variable) {
-    // Implemente a lógica para verificar se a variável já existe na lista
+    // Implemente a logica para verificar se a variavel ja existe na lista
     var n=0;
     var nn=variables.length;
     for(n=0;n<nn;n++){
@@ -76,9 +78,9 @@ function variableIndex(variable) {
     return False;
 }
 
-// Código para obter o valor da lista de código de variáveis
+// Codigo para obter o valor da lista de codigo de variaveis
 function getValueFromVariableList(variable) {
-    // Implemente a lógica para obter o valor da variável na lista
+    // Implemente a logica para obter o valor da variavel na lista
     var n=0;
     var nn=variables.length;
     for(n=0;n<nn;n++){
@@ -90,9 +92,9 @@ function getValueFromVariableList(variable) {
 
 }
 
-// Código para alterar variável na lista
+// Codigo para alterar variavel na lista
 function updateVariableInList() {
-    // Implemente a lógica para atualizar o valor da variável na lista
+    // Implemente a logica para atualizar o valor da variavel na lista
     lists=document.getElementById("variableList");
     var n=0;
     var nn=variables.length;
@@ -127,14 +129,14 @@ function updateVariableInList() {
     
 }
 
-// Separar a função por vírgulas e parâmetros
+// Separar a funcao por virgulas e parametros
 function splitFunctionByCommasAndParams(func) {
-    // Implemente a lógica para separar a função por vírgulas e parâmetros
+    // Implemente a logica para separar a funcao por virgulas e parametros
 }
 
-// Função de reset
+// Funcao de reset
 document.getElementById('resetButton').addEventListener('click', function() {
-    // Implemente a lógica de reset
+    // Implemente a logica de reset
     starts();
 });
 window.onload = function() {
@@ -143,7 +145,7 @@ window.onload = function() {
 };
 // Processo seguinte
 document.getElementById('nextButton').addEventListener('click', function() {
-    // Implemente a lógica do próximo passo
+    // Implemente a logica do proximo passo
     var nn=variables.length;
     var nnx=programs.length;
     debugs=document.getElementById("instructionList");
@@ -372,7 +374,29 @@ document.getElementById('nextButton').addEventListener('click', function() {
                         
                     }
 
-            }           
+            }
+            if (args[0]=="INC" && args.length>1){
+                
+                var vals=1;
+                    
+                
+                if(variableExists(args[1])){
+                        
+                        values[variableIndex(args[1])]= values[variableIndex(args[1])]+vals;
+                        iiii=0
+                    }else{
+                         if (isNumericOrAlphanumeric(args[1])){
+                              debugs.textContent=programs[pc]+">> Error address memory not suport";
+                              iiii=0;
+                        }else{
+                              addVariableToList(args[1]);
+                              values[variableIndex(args[1])]=values[variableIndex(args[1])]+vals;
+                              iiii=0;
+                        }
+                        
+                    }
+
+            }            
             if(iiii!=0)debugs.textContent=programs[pc]+">> instruction error";
         }
         
