@@ -24,7 +24,17 @@ function splitCodeByLine(code) {
 
 // Função para separar linha atual por vírgulas
 function splitCurrentLineByCommas(line) {
-    return line.split(',');
+    var spt=line.split(',');
+    var sss=[];
+    var n=0;
+    for(n=0;n<spt.length;n++){
+        var s=""+spt[n].toString();
+        var ss=""+s.trim();
+        ss=ss.toUpperCase();
+        sss.push(ss);
+    }
+    
+    return sss;
 }
 
 // Verifica se um parâmetro é numérico ou alfanumérico
