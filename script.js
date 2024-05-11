@@ -5,12 +5,14 @@ var variables=["RAX","RBX","RCX","RDX","PO","NE","ZERO","CARRY","OVERFLOW","DIRE
 var values=[0,0,0,0,0,0,0,0,0,0];
 var breakpointss=[];
 var jmps=[];
+var stacks=[];
 var aa="";
 function starts(){
     var codeInput = document.getElementById('codeInput');
     var n=0;
     var nn=0;
     pc=0;
+    stacks=[];
     variables=["RAX","RBX","RCX","RDX","PO","NE","ZERO","CARRY","OVERFLOW","DIRECTION"];
     values=[0,0,0,0,0,0,0,0,0,0];
     if(codeInput.value=="")return 0;
@@ -690,11 +692,41 @@ document.getElementById('nextButton').addEventListener('click', function() {
                     if(ttt+":"==breakpointss[nm]){
                         
                          if (values[5]!=0) pc=jmps[nm];
+                         
                          iiii=0;
                     }
                 }
             }      
-
+            if (args[0]=="CALL" && args.length>1){
+                var nm=0;
+                var tt=-1;
+                var ttt=args[1];
+                
+                for(nm=0;nm<breakpointss.length;nm++){
+                    if(ttt+":"==breakpointss[nm]){
+                        stacks.push(pc);
+                         pc=jmps[nm];
+                         iiii=0;
+                    }
+                }
+            
+               
+            }
+            if (args[0]=="RET" && args.length>0){
+                var nm=0;
+                var tt=-1;
+                
+                
+                
+                    if(stacks.length>0){
+                        
+                         pc=stacks.pop();
+                         iiii=0;
+                    }else{
+                         debugs.textContent="Program ends or out of stack..."
+                         iiii=0;
+                    }
+            }  
             try{
                 if (args[0].indexOf(':')>0)iiii=0;
             }catch{
