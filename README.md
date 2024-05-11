@@ -46,5 +46,11 @@ dec rcx
 cmp rcx,0
 
 jnz loop 
+call func
+jmp ends
+func1:
+mov rax,1
+ret
 
-jmp loop
+ends:
+ret
