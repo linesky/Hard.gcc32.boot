@@ -727,6 +727,36 @@ document.getElementById('nextButton').addEventListener('click', function() {
                          iiii=0;
                     }
             }  
+            if (args[0]=="CLC" && args.length>0){
+                values[7]=0;
+                 iiii=0;
+                    
+            } 
+            if (args[0]=="STC" && args.length>0){
+                values[7]=1;
+                iiii=0;
+           
+            }
+            if (args[0]=="CLZ" && args.length>0){
+                values[6]=0;
+                iiii=0;
+           
+            } 
+            if (args[0]=="STZ" && args.length>0){
+                values[6]=1;
+                iiii=0;
+  
+            }
+            if (args[0]=="CLD" && args.length>0){
+                values[9]=0;
+                iiii=0;
+           
+            } 
+            if (args[0]=="STD" && args.length>0){
+                values[9]=1;
+                iiii=0;
+  
+            }
             try{
                 if (args[0].indexOf(':')>0)iiii=0;
             }catch{
