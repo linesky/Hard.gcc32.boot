@@ -703,9 +703,11 @@ document.getElementById('nextButton').addEventListener('click', function() {
                 var ttt=args[1];
                 
                 for(nm=0;nm<breakpointss.length;nm++){
+                    
                     if(ttt+":"==breakpointss[nm]){
+                       
                         stacks.push(pc);
-                         pc=jmps[nm];
+                         pc=jmps[nm]-1;
                          iiii=0;
                     }
                 }
