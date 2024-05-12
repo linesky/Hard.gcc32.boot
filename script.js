@@ -781,7 +781,7 @@ document.getElementById('nextButton').addEventListener('click', function() {
                             
                             for(nm=0;nm<breakpointss.length;nm++){
                                 if(args[1]+":"==breakpointss[nm]){
-                                    stacks.push((-1234567890)-jmps[nm]);
+                                    stacks.push(jmps[nm]);
                                      
                                      iiii=0;
                                 }
@@ -812,7 +812,35 @@ document.getElementById('nextButton').addEventListener('click', function() {
                         
                     }
 
-            } 
+            }
+            if (args[0]=="PUTS" && args.length>0){
+                var nm=0;
+                var tt=-1;
+                var vvalues=0;
+                var ttt=args[1];
+                var vvvv=[];
+                var ttv="output:";
+                if (stacks.length>0){
+
+                    vvalues=stacks.pop();
+                    stacks.push(vvalues);
+                    
+                    vvvv=splitCurrentLineByCommas(programs[vvalues]);
+                    
+                    if (vvvv.length>2 && vvvv[1]=="DB"){
+                        for(nm=2;nm<vvvv.length;nm++){
+                            ttv=ttv+vvvv[nm]
+                        }
+                        
+                        alert(ttv);
+                    }
+                    iiii=0;
+                } 
+
+               
+            
+               
+            }
             try{
                 if (args[0].indexOf(':')>0)iiii=0;
             }catch{
