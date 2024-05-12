@@ -757,6 +757,11 @@ document.getElementById('nextButton').addEventListener('click', function() {
                 iiii=0;
   
             }
+            if (args[0]==";" && args.length>0){
+                
+                iiii=0;
+  
+            }
             try{
                 if (args[0].indexOf(':')>0)iiii=0;
             }catch{
