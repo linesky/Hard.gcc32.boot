@@ -762,6 +762,55 @@ document.getElementById('nextButton').addEventListener('click', function() {
                 iiii=0;
   
             }
+            if (args[0]=="PUSH" && args.length>1){
+                
+                var vals=1;
+                    
+                
+                if(variableExists(args[1])){
+                        
+                    stacks.push( values[variableIndex(args[1])]);
+                        iiii=0
+                    }else{
+                         if (isNumericOrAlphanumeric(args[1]) && args.length>1){
+                            stacks.push( parseInt(args[1]));
+                              iiii=0;
+                        }else{
+                            
+                            for(nm=0;nm<breakpointss.length;nm++){
+                                if(args[1]+":"==breakpointss[nm]){
+                                    stacks.push((-1234567890)-jmps[nm]);
+                                     
+                                     iiii=0;
+                                }
+                            }
+                        }
+                        
+                    }
+
+            }
+            if (args[0]=="POP" && args.length>1){
+                
+                var vals=1;
+                    
+                
+                if(variableExists(args[1])){
+                        
+                        values[variableIndex(args[1])]=stacks.pop();
+                        iiii=0
+                    }else{
+                         if (isNumericOrAlphanumeric(args[1])){
+                              debugs.textContent=programs[pc]+">> Error address memory not suport";
+                              iiii=0;
+                        }else{
+                              addVariableToList(args[1]);
+                              values[variableIndex(args[1])]=stacks.pop();
+                              iiii=0;
+                        }
+                        
+                    }
+
+            } 
             try{
                 if (args[0].indexOf(':')>0)iiii=0;
             }catch{
