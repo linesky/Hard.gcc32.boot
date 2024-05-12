@@ -2,6 +2,8 @@
 
 this is a x64 simulator but only yet have nop and mov  add  sub  mul div or instrution yet
 reset to start after modify the code
+
+
 exemples:
 
 
@@ -76,6 +78,8 @@ call func
 
 jmp ends
 
+
+data1: db "hello world",0
 
 
 func1:
