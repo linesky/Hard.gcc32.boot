@@ -889,10 +889,10 @@ document.getElementById('nextButton').addEventListener('click', function() {
                 var ttv="";
                 if (stacks.length>0){
 
-                    vvalues=stacks.pop();
                     vvalues2=stacks.pop();
-                    stacks.push(vvalues2);
+                    vvalues=stacks.pop();
                     stacks.push(vvalues);
+                    stacks.push(vvalues2);
                     
                     vvvv=splitCurrentLineByCommas(programs[vvalues2]);
                     vvvv2=splitCurrentLineByCommas(programs[vvalues]);

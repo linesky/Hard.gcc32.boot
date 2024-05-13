@@ -1,6 +1,6 @@
 ; strcpy string copy sample
-push hello
 push output
+push hello
 strcpy
 pop eax
 pop eax
