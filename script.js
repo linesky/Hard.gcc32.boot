@@ -977,6 +977,39 @@ document.getElementById('nextButton').addEventListener('click', function() {
                 }    
                 
             }
+            if (args[0]=="MEMSET" && args.length>0){
+                var nm=0;
+                var tt=-1;
+                var vvalues=0;
+                var vvalues2=0;
+                var vvalues3=0;
+                var ttt="";
+                var vvvv=[];
+                var vvvv2=[];
+                var ttv="";
+                if (stacks.length>0){
+                    vvalues3=stacks.pop();
+                    vvalues2=stacks.pop();
+                    vvalues=stacks.pop();
+                    stacks.push(vvalues);
+                    stacks.push(vvalues2);
+                    stacks.push(vvalues3);
+                    
+                    vvvv=splitCurrentLineByCommas(programs[vvalues]);
+                    
+                    
+                    if (vvvv.length>2 && vvvv[1]=="DB"){
+                        let char=String.fromCharCode(vvalues2);
+                        for(nm=0;nm<vvalues3;nm++){
+                            ttv=ttv+char;
+                        }
+                        programs[vvalues]=vvvv[0]+" "+vvvv[1]+" "+ttv;
+                        
+                        iiii=0;
+                    }
+                }    
+                
+            }
             try{
                 if (args[0].indexOf(':')>0)iiii=0;
             }catch{
