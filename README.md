@@ -10,6 +10,7 @@ this simulates NASM assembler and gcc linker using"nasm example.asm -o example.o
 exemples:
 
 main:
+
 clc
 
 stc
