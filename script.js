@@ -971,7 +971,7 @@ document.getElementById('nextButton').addEventListener('click', function() {
                     
                     mmalloc++;
                     
-                    alert(programs[values[0]]);    
+                    
                     iiii=0;
                     
                 }    
