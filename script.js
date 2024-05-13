@@ -909,6 +909,43 @@ document.getElementById('nextButton').addEventListener('click', function() {
                 }    
                 
             }
+            if (args[0]=="STRCAT" && args.length>0){
+                var nm=0;
+                var tt=-1;
+                var vvalues=0;
+                var vvalues2=0;
+                var ttt="";
+                var vvvv=[];
+                var vvvv2=[];
+                var ttv="";
+                var ttv2="";
+                if (stacks.length>0){
+
+                    vvalues2=stacks.pop();
+                    vvalues=stacks.pop();
+                    stacks.push(vvalues);
+                    stacks.push(vvalues2);
+                    
+                    vvvv=splitCurrentLineByCommas(programs[vvalues2]);
+                    vvvv2=splitCurrentLineByCommas(programs[vvalues]);
+                    
+                    if (vvvv.length>2 && vvvv[1]=="DB" && vvvv2.length>2 && vvvv2[1]=="DB"){
+                        for(nm=2;nm<vvvv.length;nm++){
+                            ttv=ttv+vvvv[nm]+" ";
+                        }
+                        for(nm=2;nm<vvvv2.length;nm++){
+                            ttv2=ttv2+vvvv2[nm]+" ";
+                        }
+                        ttv=ttv.replace(/""/g,"");
+                        ttv2=ttv2.replace(/""/g,"");
+                        programs[vvalues]=vvvv2[0]+" "+vvvv2[1]+" "+ttv2+ttv;
+                        alert(programs[vvalues]);
+                        alert(programs[vvalues2]);
+                        iiii=0;
+                    }
+                }    
+                
+            }
             try{
                 if (args[0].indexOf(':')>0)iiii=0;
             }catch{
