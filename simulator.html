@@ -9,6 +9,7 @@
 </head>
 <body>
     <div class="container">
+        <input type="file" id="file-selector" >
         <textarea id="codeInput" placeholder="Insira o codigo aqui..."></textarea>
         <div id="current" class="currentInstruction"></div>
         <div id=lists class="variables">
@@ -30,5 +31,20 @@
         </div>
     </div>
     <script src="script.js"></script>
+    <script>
+        codeInput = document.getElementById('codeInput');
+        const fileSelector = document.getElementById('file-selector');
+        fileSelector.addEventListener('change', (event) => {
+            const fileList = event.target.files[0];
+            
+          var reader = new FileReader();
+          reader.readAsText(fileList);
+        reader.onload =readerEvent => {
+            var values=readerEvent.target.result;
+            codeInput.value=values;
+        }
+         
+        });
+      </script>
 </body>
 </html>
