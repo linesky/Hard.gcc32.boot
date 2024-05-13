@@ -1,4 +1,4 @@
-# x64.simulator
+s# x64.simulator
 
 this is a x64 simulator but only yet have nop and mov  add  sub  mul div or instrution yet
 reset to start after modify the code
@@ -9,7 +9,7 @@ this simulates NASM assembler and gcc linker using"nasm example.asm -o example.o
 
 exemples:
 
-
+main:
 clc
 
 stc
