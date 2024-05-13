@@ -10,13 +10,14 @@
 <body>
     <div class="container">
         <input type="file" id="file-selector" >
-        <textarea id="codeInput" placeholder="Insira o codigo aqui..."></textarea>
+       
+        <textarea id="codeInput" placeholder="put you code here..."></textarea>
         <div id="current" class="currentInstruction"></div>
         <div id=lists class="variables">
-            <h2>Lista de Variaveis</h2>
+            <h2>vars</h2>
             <select id="variableList" multiple></select>
             <div class="registerValues">
-                <h2>Valores dos Registos</h2>
+                <h2>Register Values</h2>
                 <div>RAX: <span id="raxValue"></span></div>
                 <div>RBX: <span id="rbxValue"></span></div>
                 <div>RCX: <span id="rcxValue"></span></div>
@@ -24,9 +25,11 @@
             </div>
         </div>
         <button id="resetButton">Reset</button>
-        <button id="nextButton">Proximo Passo</button>
+        <button id="nextButton">next steep</button>
+        <button id="saves">save</button>
+
         <div class="instructionList">
-            <h2>Lista de Instrucoes</h2>
+            <h2>Instruction List</h2>
             <ul id="instructionList"></ul>
         </div>
     </div>
@@ -45,6 +48,24 @@
         }
          
         });
+      </script>
+      <script>
+        const saveBtn = document.getElementById('saves');
+        
+        
+        saveBtn.addEventListener('click', function(){
+            let name =prompt("filename","new");
+            var tempLink = document.createElement("a");
+  
+            var codeInput = document.getElementById("codeInput");
+           
+           var taBlob = new Blob([codeInput.value], {type: 'text/plain'});
+           tempLink.setAttribute('href', URL.createObjectURL(taBlob));
+        tempLink.setAttribute('download', `${name.toLowerCase()}.asm`);
+        tempLink.click();
+  
+        URL.revokeObjectURL(tempLink.href);
+});
       </script>
 </body>
 </html>
