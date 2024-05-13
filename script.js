@@ -15,6 +15,8 @@ function starts(){
     pc=0;
     breakpointss=[];
     stacks=[];
+    jmps=[];
+    stacks=[];
     variables=["RAX","RBX","RCX","RDX","PO","NE","ZERO","CARRY","OVERFLOW","DIRECTION"];
     values=[0,0,0,0,0,0,0,0,0,0];
     if(codeInput.value=="")return 0;
