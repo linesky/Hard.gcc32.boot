@@ -869,7 +869,7 @@ document.getElementById('nextButton').addEventListener('click', function() {
                         for(nm=2;nm<vvvv.length;nm++){
                             ttv=ttv+vvvv[nm]+" ";
                         }
-                        
+                        ttv=ttv.replaceAll('\"',"");
                         alert(ttv);
                     }
                     iiii=0;
@@ -901,7 +901,7 @@ document.getElementById('nextButton').addEventListener('click', function() {
                         for(nm=2;nm<vvvv.length;nm++){
                             ttv=ttv+vvvv[nm]+" ";
                         }
-                        ttv=ttv.replace(/""/g,"")
+                        ttv=ttv.replaceAll('\"',"");
                         programs[vvalues]=vvvv2[0]+" "+vvvv2[1]+" "+ttv;
                         
                         iiii=0;
@@ -936,11 +936,10 @@ document.getElementById('nextButton').addEventListener('click', function() {
                         for(nm=2;nm<vvvv2.length;nm++){
                             ttv2=ttv2+vvvv2[nm]+" ";
                         }
-                        ttv=ttv.replace(/""/g,"");
-                        ttv2=ttv2.replace(/""/g,"");
+                        ttv=ttv.replaceAll('\"',"");
+                        ttv2=ttv2.replaceAll('\"',"");
                         programs[vvalues]=vvvv2[0]+" "+vvvv2[1]+" "+ttv2+ttv;
-                        alert(programs[vvalues]);
-                        alert(programs[vvalues2]);
+                        
                         iiii=0;
                     }
                 }    
