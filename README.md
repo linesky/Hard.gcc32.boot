@@ -4,7 +4,7 @@ this is a x64 simulator but only yet have nop and mov  add  sub  mul div or inst
 reset to start after modify the code
 on c call exemple in real hardware you must put call beford
 like "call puts"
-this simulates NASM assembler and gcc linker using"nasm example.asm -o example.o;gcc example.o -o example.elf;./example.elf"
+this simulates NASM assembler and gcc linker using"nasm -f elf64 example.asm -o example.o;gcc example.o -o example.elf;./example.elf"
 
 
 exemples:
