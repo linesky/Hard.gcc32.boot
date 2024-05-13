@@ -12,6 +12,7 @@ function starts(){
     var n=0;
     var nn=0;
     pc=0;
+    breakpointss=[];
     stacks=[];
     variables=["RAX","RBX","RCX","RDX","PO","NE","ZERO","CARRY","OVERFLOW","DIRECTION"];
     values=[0,0,0,0,0,0,0,0,0,0];
@@ -550,7 +551,10 @@ document.getElementById('nextButton').addEventListener('click', function() {
                 for(nm=0;nm<breakpointss.length;nm++){
                     if(ttt+":"==breakpointss[nm]){
                         
-                         if (values[6]==0) pc=jmps[nm];
+                         if (values[6]==0) {
+                            pc=jmps[nm];
+                         
+                         }
                          iiii=0;
                     }
                 }
@@ -565,7 +569,11 @@ document.getElementById('nextButton').addEventListener('click', function() {
                 for(nm=0;nm<breakpointss.length;nm++){
                     if(ttt+":"==breakpointss[nm]){
                         
-                         if (values[6]!=0) pc=jmps[nm];
+                         if (values[6]!=0){
+                            pc=jmps[nm];
+                            
+
+                         } 
                          iiii=0;
                     }
                 }
@@ -580,7 +588,10 @@ document.getElementById('nextButton').addEventListener('click', function() {
                 for(nm=0;nm<breakpointss.length;nm++){
                     if(ttt+":"==breakpointss[nm]){
                         
-                         if (values[6]==0) pc=jmps[nm];
+                         if (values[6]==0) {
+                            pc=jmps[nm];
+                         
+                         }
                          iiii=0;
                     }
                 }
@@ -595,7 +606,11 @@ document.getElementById('nextButton').addEventListener('click', function() {
                 for(nm=0;nm<breakpointss.length;nm++){
                     if(ttt+":"==breakpointss[nm]){
                         
-                         if (values[6]!=0) pc=jmps[nm];
+                         if (values[6]!=0){
+                            pc=jmps[nm];
+                            
+
+                         } 
                          iiii=0;
                     }
                 }
@@ -618,7 +633,11 @@ document.getElementById('nextButton').addEventListener('click', function() {
                 for(nm=0;nm<breakpointss.length;nm++){
                     if(ttt+":"==breakpointss[nm]){
                         
-                         if (values[7]==0) pc=jmps[nm];
+                         if (values[7]==0){
+                            pc=jmps[nm];
+                            
+
+                         }
                          iiii=0;
                     }
                 }
@@ -633,8 +652,12 @@ document.getElementById('nextButton').addEventListener('click', function() {
                 for(nm=0;nm<breakpointss.length;nm++){
                     if(ttt+":"==breakpointss[nm]){
                         
-                         if (values[7]!=0) pc=jmps[nm];
-                         iiii=0;
+                         if (values[7]!=0){
+                            pc=jmps[nm];
+                            ;
+                         } 
+                         iiii=0
+                         
                     }
                 }
             
@@ -648,7 +671,11 @@ document.getElementById('nextButton').addEventListener('click', function() {
                 for(nm=0;nm<breakpointss.length;nm++){
                     if(ttt+":"==breakpointss[nm]){
                         
-                         if (values[5]==0) pc=jmps[nm];
+                         if (values[5]==0){
+
+                          pc=jmps[nm];
+                         
+                         }
                          iiii=0;
                     }
                 }
@@ -663,7 +690,10 @@ document.getElementById('nextButton').addEventListener('click', function() {
                 for(nm=0;nm<breakpointss.length;nm++){
                     if(ttt+":"==breakpointss[nm]){
                         
-                         if (values[5]==0) pc=jmps[nm];
+                         if (values[5]==0 && values[6]==0){
+                            pc=jmps[nm];
+                            
+                         }
                          iiii=0;
                     }
                 }
@@ -677,8 +707,9 @@ document.getElementById('nextButton').addEventListener('click', function() {
                     if(ttt+":"==breakpointss[nm]){
                         
                          if (values[5]!=0) pc=jmps[nm];
-                         iiii=0;
+                         
                     }
+                    iiii=0;
                 }
             
                
@@ -691,9 +722,13 @@ document.getElementById('nextButton').addEventListener('click', function() {
                 for(nm=0;nm<breakpointss.length;nm++){
                     if(ttt+":"==breakpointss[nm]){
                         
-                         if (values[5]!=0) pc=jmps[nm];
+                         if (values[5]!=0 && values[6]==0){
+                            pc=jmps[nm];
                          
+                            
+                         }
                          iiii=0;
+                        
                     }
                 }
             }      
@@ -708,8 +743,9 @@ document.getElementById('nextButton').addEventListener('click', function() {
                        
                         stacks.push(pc);
                          pc=jmps[nm]-1;
-                         iiii=0;
-                    }
+                        
+                    } 
+                    iiii=0;
                 }
             
                
@@ -780,6 +816,7 @@ document.getElementById('nextButton').addEventListener('click', function() {
                         }else{
                             
                             for(nm=0;nm<breakpointss.length;nm++){
+                                
                                 if(args[1]+":"==breakpointss[nm]){
                                     stacks.push(jmps[nm]);
                                      
@@ -797,7 +834,7 @@ document.getElementById('nextButton').addEventListener('click', function() {
                     
                 
                 if(variableExists(args[1])){
-                        
+                       
                         values[variableIndex(args[1])]=stacks.pop();
                         iiii=0
                     }else{
@@ -806,6 +843,7 @@ document.getElementById('nextButton').addEventListener('click', function() {
                               iiii=0;
                         }else{
                               addVariableToList(args[1]);
+                              
                               values[variableIndex(args[1])]=stacks.pop();
                               iiii=0;
                         }
@@ -829,7 +867,7 @@ document.getElementById('nextButton').addEventListener('click', function() {
                     
                     if (vvvv.length>2 && vvvv[1]=="DB"){
                         for(nm=2;nm<vvvv.length;nm++){
-                            ttv=ttv+vvvv[nm]
+                            ttv=ttv+vvvv[nm]+" ";
                         }
                         
                         alert(ttv);
