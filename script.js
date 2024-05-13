@@ -7,6 +7,7 @@ var breakpointss=[];
 var jmps=[];
 var stacks=[];
 var aa="";
+var mmalloc=0;
 function starts(){
     var codeInput = document.getElementById('codeInput');
     var n=0;
@@ -942,6 +943,37 @@ document.getElementById('nextButton').addEventListener('click', function() {
                         
                         iiii=0;
                     }
+                }    
+                
+            }
+            if (args[0]=="MALLOC" && args.length>0){
+                var nm=0;
+                var tt=-1;
+                var vvalues=0;
+                var vvalues2=0;
+                var ttt="";
+                var vvvv=[];
+                var vvvv2=[];
+                var ttv="";
+                var ttv2="";
+                if (stacks.length>0){
+
+                   
+                   
+                   
+                    
+                   
+                    
+                    
+                    values[0]=programs.length;
+                    
+                    programs.push("MALLOC"+mmalloc.toString()+" DB \"\"");
+                    
+                    mmalloc++;
+                    
+                    alert(programs[values[0]]);    
+                    iiii=0;
+                    
                 }    
                 
             }
