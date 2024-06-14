@@ -18,6 +18,10 @@ tutor
 https://ssw.jku.at/Research/Projects/Coco/Tutorial/slides.zip
 
 
+https://ssw.jku.at/Research/Projects/Coco/Doc/UserManual.pdf
+
+
+
 
 
 
