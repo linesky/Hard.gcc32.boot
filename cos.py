@@ -9,7 +9,7 @@ def abs(x:float) :
     xx=x
     if xx<0:
         xx=-x
-    return x
+    return xx
 
 def getPI():
     global M_PI
