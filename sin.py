@@ -36,4 +36,4 @@ def calcY(angle:int):
 print("\x1bc\x1b[43;37m]")
 r=range(0,360,6)
 for n in r:
-   print(str(n)+"="+str(cos(n//6)))
+   print(str(n)+"="+str(sin(n//6)))
